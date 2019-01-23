@@ -5,6 +5,8 @@
 </template>
 
 <script>
+import 'spectre.css/dist/spectre.min.css'
+import 'spectre.css/dist/spectre-exp.min.css'
 import HelloWorld from './components/HelloWorld.vue'
 
 export default {
@@ -17,8 +19,8 @@ export default {
 
 <style lang="css">
 body {
-  height: 400px;
-  width: 400px;
+  height: 300px;
+  width: 600px;
   margin: 0;
   padding: 0;
 }
