@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-    <div class="circle color1"></div>
+    <!-- <div class="circle color1"></div>
     <div class="circle color2"></div>
     <div class="circle color3"></div>
     <div class="circle color4"></div>
@@ -15,6 +15,43 @@
       <kbd class="letter color4"><span>E</span></kbd>
       <kbd class="letter color5"><span>S</span></kbd>
     </div>
+    <h2>Loading...</h2> -->
+
+    <div style="display: flex; width: 200px; flex-wrap: wrap;">
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+    </div>
+
   </div>
 </template>
 
@@ -22,25 +59,35 @@
 import anime from 'animejs'
 export default {
   mounted () {
-    var path1 = anime.path('.content circle')
+    // var path1 = anime.path('.content circle')
+
+    // anime({
+    //   targets: '.content .circle',
+    //   translateX: path1('x'),
+    //   translateY: path1('y'),
+    //   easing: 'easeInOutSine',
+    //   duration: 1000,
+    //   loop: true,
+    //   delay: anime.stagger(120)
+    // })
+
+    // anime({
+    //   targets: '.title .letter',
+    //   translateY: 300,
+    //   direction: 'reverse',
+    //   easing: 'easeInOutBack',
+    //   delay: anime.stagger(300)
+    // })
 
     anime({
-      targets: '.content .circle',
-      translateX: path1('x'),
-      translateY: path1('y'),
-      easing: 'easeInOutSine',
-      duration: 1000,
+      targets: '.content .grid-item',
       loop: true,
-      delay: anime.stagger(120)
-    })
-
-    anime({
-      targets: '.title .letter',
-      translateY: 300,
-      direction: 'reverse',
-      easing: 'easeInOutBack',
-      delay: anime.stagger(300)
-    })
+      scale: [
+        {value: .3, easing: 'easeOutSine', duration: 600},
+        {value: 1, easing: 'easeOutSine', duration: 600}
+      ],
+      delay: anime.stagger(150, {grid: [8, 4], from: 'first'})
+    });
   }
 }
 </script>
@@ -48,7 +95,7 @@ export default {
 <style lang="css">
 :root {
   --circle-perimeter: 20px;
-  --background-color: #FFFFFF;
+  --background-color: #35495e;
 }
 
 .content {
@@ -61,6 +108,14 @@ export default {
   align-items: center;
   position: relative;
   background-color: var(--background-color);
+}
+
+.grid-item {
+  margin: 2px;
+  height: 20px; 
+  width: 20px;
+  background-color: #42b883;
+  border-radius: 50%;
 }
 
 .progress-bar {
@@ -91,18 +146,23 @@ export default {
 
 
 .color1 {
-  background-color: rgb(255, 84, 84);
+  /* background-color: rgb(255, 84, 84); */
+  background-color: rgb(141, 141, 141);
 } 
 .color2 {
-  background-color: rgb(255, 240, 84);
+  /* background-color: rgb(255, 240, 84); */
+  background-color: rgb(141, 141, 141);
 } 
 .color3 {
-  background-color: rgb(0, 219, 116);
+  /* background-color: rgb(0, 219, 116); */
+  background-color: rgb(141, 141, 141);
 } 
 .color4 {
-  background-color: rgb(84, 200, 255);
+  /* background-color: rgb(84, 200, 255); */
+  background-color: rgb(141, 141, 141);
 } 
 .color5 {
-  background-color: rgb(175, 84, 255);
+  /* background-color: rgb(175, 84, 255); */
+  background-color: rgb(141, 141, 141);
 } 
 </style>
